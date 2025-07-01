@@ -1,0 +1,48 @@
+.bg-sidebar {
+    background-color: #BC96AF;
+    height: 580px;
+    width: 200px;
+}
+
+ul {
+    padding-inline-start: 0%;
+}
+
+.item-cont {
+    border-bottom: 1px solid #F5FFFE;
+
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.inact {
+    background-color: transparent;
+}
+
+.active {
+    background-color: #F5F5F5;
+}
+
+.name {
+    text-align: center;
+    font-weight: 500;
+}
+
+.actname {
+    color: #684B5E;
+}
+
+.inactname {
+    color: #F5FFFE;
+}
+
+li {
+    list-style-type: none;
+
+}

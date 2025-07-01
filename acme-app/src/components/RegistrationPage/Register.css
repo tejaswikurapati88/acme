@@ -1,0 +1,23 @@
+.formreg{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 320px;
+}
+.error{
+    color: red;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0%;
+    padding: 0%;
+}
+.small-btn{
+    font-size: 15px;
+    color: #777777;
+    text-decoration: underline;
+    align-self: center;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1px;
+}

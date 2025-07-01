@@ -1,0 +1,17 @@
+post http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "email": "tejaswikurapati88@gmail.com",
+    "password": "Parni@Teja123"
+}
+
+###
+
+post http://localhost:3000/users/signin
+Content-Type: application/json 
+
+{
+    "email": "tejaswikurapati88@gmail.com",
+    "password": "Parni@Teja123"
+}

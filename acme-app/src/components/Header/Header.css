@@ -1,0 +1,47 @@
+.bg-header-cont{
+    background-color: #BC96AF;
+    display: flex;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+.logo{
+    color: #F5FFFE;
+    font-weight: 500;
+    font-size: 23px;
+    font-family: "Roboto";
+}
+.logo-cont{
+    display: flex;
+    align-items: center;
+}
+.logout{
+    color: #F5FFFE;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-family: "Roboto";
+}
+.cont-profle{
+    background-color: #FFF6F6;
+    height: 50px;
+    width: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 10px;
+}
+.pro{
+    color: #777777;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0%;
+    font-family: "Inria Serif";
+}
