@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const allowedOrigins = [
   "http://localhost:3001",
   "http://localhost:3000",
-  "https://acme-protej.vercel.app/"
+  "https://acme-protej.vercel.app"
 ];
 
 app.use(
