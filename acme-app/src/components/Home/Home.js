@@ -19,13 +19,12 @@ import "react-datepicker/dist/react-datepicker.css";
 const Home = () => {
     const [preweight, setweight] = useState('48')
     const [targetWeight, settarget] = useState("43")
-   const [med, setMed] = useState(new Date('2025-06-02')); // example start date
-   const [selectedDate, setSelectedDate] = useState(new Date('2025-06-02')); // example start date
+    const [selectedDate, setSelectedDate] = useState(new Date('2025-06-02')); 
 
-  const today = new Date();
-  const elapsedTime = today.getTime() - med.getTime();
-  const elapsedDays = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
-  const remainingDays = 30 - elapsedDays;
+    const today = new Date();
+    const elapsedTime = today.getTime() - selectedDate.getTime();
+    const elapsedDays = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+    const remainingDays = 30 - elapsedDays;
 
     const data = [
         { month: "Jan", weight: 60 },
@@ -80,20 +79,20 @@ const Home = () => {
                             <div className='sub-scon'>
                                 <div className='sid-cont'>
                                     <h4>Your Present Weight</h4>
-                                    <div 
-                                    style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                                        <input type='text' className={targetWeight ===""? "empty-inp inp-val": "inp-val"} value={preweight}
+                                    <div
+                                        style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                                        <input type='text' className={targetWeight === "" ? "empty-inp inp-val" : "inp-val"} value={preweight}
                                             onChange={(e) => { setweight(e.target.value) }} />
-                                        <p className='inp-units' style={{marginTop:"0px"}}>kgs</p>
+                                        <p className='inp-units' style={{ marginTop: "0px" }}>kgs</p>
                                     </div>
                                 </div>
                                 <div className='sid-cont'>
 
                                     <h4>Target Weight</h4>
                                     <div style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                                        <input type='text' className={targetWeight ===""? "empty-inp inp-val": "inp-val"} value={targetWeight}
+                                        <input type='text' className={targetWeight === "" ? "empty-inp inp-val" : "inp-val"} value={targetWeight}
                                             onChange={(e) => { settarget(e.target.value) }} />
-                                        <p className='inp-units' style={{marginTop:"0px"}}>kgs</p>
+                                        <p className='inp-units' style={{ marginTop: "0px" }}>kgs</p>
                                     </div>
                                 </div>
                             </div>
@@ -102,13 +101,13 @@ const Home = () => {
                                 <h4>Past Medications</h4>
                                 {/*<input type='text' className='inp-vall' value={med}
                                     onChange={(e) => { setMed(e.target.value) }} />*/}
-        <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        dateFormat="MMM dd, yyyy"
-        className='inp-vall'
-      />
-      
+                                <DatePicker
+                                    selected={selectedDate}
+                                    onChange={(date) => setSelectedDate(date)}
+                                    dateFormat="MMM dd, yyyy"
+                                    className='inp-vall'
+                                />
+
                             </div>
                         </div>
                     </div>

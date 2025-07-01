@@ -30,9 +30,7 @@ const Login = () => {
                 },
                 body: JSON.stringify(userdetails)
             })
-            console.log(response)
-            const data= await response.json()
-            console.log(data)
+            
             if (response.status === 200) {
                 const {jwtToken}= await response.json()
                 Cookies.set("jwttoken", jwtToken)
