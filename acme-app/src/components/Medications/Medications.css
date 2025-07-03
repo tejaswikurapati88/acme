@@ -1,0 +1,36 @@
+.med-bg-cont{
+    background-image: url("https://res.cloudinary.com/dkvptcm7q/image/upload/v1751534480/pexels-davidpeterson-7083683_y3b7rq.jpg");
+    background-size: cover;
+    height: 90vh;
+    width: 90%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.outer-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+    flex-direction: column;
+}
+.ship-cont{
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF6F6;
+    height: 200px;
+    width: 90%;
+    margin-bottom: 60px;
+}
+.heading-cont{
+    background-color: #06786B;   
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: none; 
+}
+.tra-h{
+    color: #ffffff;
+}

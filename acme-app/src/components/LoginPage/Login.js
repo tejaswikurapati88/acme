@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './Login.css'
 import loginlogo from './../../access/loginlogo.svg'
 import { API_base_url } from '../config'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 const Login = () => {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
-    const [error, seterror]= useState('')
+    const [error, seterror] = useState('')
+    const [isLoading, setisLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -18,11 +21,12 @@ const Login = () => {
             seterror("*enter all details")
         } else {
             seterror("")
-            const userdetails= {
+            const userdetails = {
                 'email': email,
                 'password': password
             }
             const url = `${API_base_url}/users/signin`
+            setisLoading(true)
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -30,17 +34,17 @@ const Login = () => {
                 },
                 body: JSON.stringify(userdetails)
             })
-            
+
             if (response.status === 200) {
-                const {jwtToken}= await response.json()
-                Cookies.set("jwttoken", jwtToken)
-                alert('Your are Logged-in')
+                const { jwtToken } = await response.json()
+                Cookies.set("jwttoken", jwtToken, { expires: 7 })
                 navigate('/')
             } else if (response.status === 401) {
                 seterror("*enter correct password!")
-            } else if (response.status === 404){
+            } else if (response.status === 404) {
                 seterror("*Invalid User. Please SignUp!")
             }
+            setisLoading(false)
         }
     }
 
@@ -74,8 +78,18 @@ const Login = () => {
                     </div>
 
                     <button type='submit' className='logbtn'>Login</button>
-                    {error!=="" && <p className='error'>{error}</p>}
+                    {error !== "" && <p className='error'>{error}</p>}
                     <p className='small-btn' onClick={() => { navigate('/register') }}>Register</p>
+                    {isLoading &&
+                        <div className="loader-overlay">
+                            <ClipLoader
+                                color="#3498db"
+                                size={40}
+                                aria-label="Loading Spinner"
+                                data-testid="loader"
+                            />
+                        </div>
+                    }
                 </form>
             </div>
         </div>

@@ -3,12 +3,14 @@ import './Register.css'
 import loginlogo from './../../access/loginlogo.svg'
 import { API_base_url } from '../config'
 import {useNavigate} from 'react-router-dom'
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Register = () => {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const [conpassword, setconpassword] = useState('')
     const [error, seterror] = useState('')
+    const [isLoading, setisLoading] = useState(false)
 
     const navigate= useNavigate()
 
@@ -24,6 +26,7 @@ const Register = () => {
             }
 
             const url = `${API_base_url}/users/register`
+            setisLoading(true)
             const response = await fetch(url, {
                 method: "post",
                 headers: {
@@ -37,9 +40,10 @@ const Register = () => {
                 seterror("*enter all details.")
             }
             else if (response.status === 200) {
-                alert("Registered Succesfully!")
+                alert("Registered Succesfully!, Please Login")
                 navigate('/login')
             }
+            setisLoading(false)
         }
     }
 
@@ -85,6 +89,16 @@ const Register = () => {
                     <button type='submit' className='logbtn'>Register</button>
                     {error!=="" && <p className='error'>{error}</p>}
                     <p className='small-btn' onClick={() => navigate('/login')}>Login</p>
+                    {isLoading &&
+                        <div className="loader-overlay">
+                            <ClipLoader
+                                color="#3498db"
+                                size={40}
+                                aria-label="Loading Spinner"
+                                data-testid="loader"
+                            />
+                        </div>
+                    }
                 </form>
             </div>
         </div>
